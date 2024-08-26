@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style> 
+      .number-button{
+          background-color: rgb(1,50,32);
+          width: 30px;
+          color: rgb(209, 96, 96);
+      }
+      .sign-button{
+        background-color: #000080;
+        width: 30px;
+        color:white;
+      }
+      .new-row{
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="new-row">
+      <p>Calculator</p>
+    </div>
+    <div class="new-row">
+      <button class="number-button">1</button>
+      <button class="number-button">2</button>
+      <button class="number-button">3</button>
+      <button class="sign-button">+</button>
+    </div>
+    <div class="new-row">
+      <button class="number-button">4</button>
+      <button class="number-button">5</button>
+      <button class="number-button">6</button>
+      <button class="sign-button">-</button>
+    </div>
+    <div class="new-row">
+      <button class="number-button">7</button>
+      <button class="number-button">8</button>
+      <button class="number-button">9</button>
+      <button class="sign-button">*</button>
+    </div>
+    <div class="new-row">
+      <button class="number-button">0</button>
+      <button class="sign-button">.</button>
+      <button class="sign-button" onClick="equlsFunction()">=</button>
+      <button class="sign-button">/</button>
+    </div>
+    <div>
+      <button>Clear</button>
+    </div>
+    
+    <script>
+      //select all buttons:
+      const buttons = document.querySelectorAll('button');
+      for (const button of buttons) {
+        //console.log(button.innerText);
+        button.onclick = () => {
+          switch (button.innerText) { 
+            case "=": 
+              result = eval(calculation);
+              console.log(`Result: ${result}`);
+              break;
+            case 'Clear':
+              calculation = '';
+              console.log(calculation);
+              break;
+            default:
+              calculation += button.innerText;
+              console.log(calculation);
+          }
+        }
+      }
+      //the javascript code
+      let calculation = '';
+      let result = 0;
+    </script>
+  </body>
+</html>
