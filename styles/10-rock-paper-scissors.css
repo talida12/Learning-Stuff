@@ -1,0 +1,38 @@
+body {
+  font-family: Arial;
+  background-color: black;
+}
+.title {
+  font-family: 'Times New Roman', serif;
+  color: white;
+  font-size: 50px;
+}
+.move-icon { 
+  height: 110px; 
+  width: 110px; 
+  border-radius: 60px;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.move-button { 
+  height: 110px; 
+  width: 110px; 
+  border-radius: 60px;
+  background-color: #111111;
+  margin: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-right: 10px;
+}
+.results-display { 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  color: white;
+  size: 15px;
+}
+.reset-button { 
+  width: 150px;
+  height: 30px;
+  font-size: 17px;
+  font-weight: 100;
+}
