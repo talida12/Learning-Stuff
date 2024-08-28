@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+  </head>
+
+  <body>
+    <button class="click-me-button" onclick="
+        const currentButton = document.querySelector('.click-me-button');
+        currentButton.innerHTML = 'Loading...';
+        setTimeout(function(){
+          document.querySelector('.click-me-button').innerHTML= 'Finished!';
+        }, 1000);
+      ">Click me</button>
+      <button class="add-to-cart-button" onclick="function_12e()">Add to cart</button>
+      <p class="random-paragraph"></p>
+      <button onclick="add_message()">Add message</button>
+      <button onclick="remove_message()">Remove message</button>
+    <script>
+      //12a: create a variable called 'add' and save a function inside. This function will console.log(2+3). Run the function twice
+      const add = function() {
+        console.log(2+3);
+      }
+      add(); 
+      add();
+
+      //12b continuing from exercise 12a, create a function runTwice(fun) that takes a function (as a parameter) and runs it twice
+      function runTwice(param) { 
+        param(); 
+        param();
+      }
+      runTwice(function() {
+        console.log('12b');
+      });
+      runTwice(add);
+
+      //12c Create a button. when clicking the button, after 1 second, the text inside the button changes to "Finished!"
+      
+      //12d continuing from 12c, modify the button so that when we click it, the text immediately changes to 'Loading..' and then after 1 second, it changes to 'Finished!'
+
+      //12e create the 'Add to cart' button. When clicking this button, display the message 'Added' below the button. Then, after 2 seconds, remove the button 
+      function function_12e() { 
+        const paragraph = document.querySelector('.random-paragraph');
+        paragraph.innerHTML = 'Added';
+        setTimeout(function(){
+          paragraph.innerHTML = ''
+        }, 2000);
+      }
+
+
+      let messages = 2;
+      function add_message() { 
+        if (messages === 0) {
+          messages++;
+          function_12g();
+        }
+        else {
+          messages++;
+        }
+      }
+      function remove_message() { 
+        messages--;
+        if (messages === 0) {
+          clearInterval(display1_id);
+          clearInterval(display2_id);
+          document.title = 'App';
+        }
+      }
+
+      let display1_id;
+      let display2_id;
+      function function_12g() {
+        display1_id = setInterval(function() {
+          document.title = `(${messages}) New messages`;
+        }, 1000);
+        display2_id = setInterval(function() {
+          document.title = 'App';
+        }, 2000);
+      }
+      function_12g();
+    </script>
+  </body>
+</html>

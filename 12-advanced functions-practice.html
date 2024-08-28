@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions Exercises</title>
+  </head>
+
+  <body>
+    <script>
+      function multiply(param1, param2) { 
+        return param1 * param2;
+      }
+
+      const oneLineFunction = (param1, param2) => param1 * param2;
+      console.log(oneLineFunction(3,5));
+
+      const countPositives = (array) => { 
+        let positives = 0;
+        array.forEach((value, index) => {
+          if (value > 0) {positives++;}
+        });
+        return positives;
+      };
+      console.log(countPositives([1,2,-5,8]));
+
+      const addNum = (array, num) => { 
+        newArray = array.map(value => value + num);
+        return newArray;
+      };
+      console.log(addNum([1,2,3], 2));
+      console.log(addNum([-2,-1,0,99],2));
+
+      const removeEgg = (foods) => { 
+        let counter = 0;
+        newArray = foods.filter(value => {
+          if (value === 'egg') counter++;
+          if (value === 'egg' && counter <= 2) return false;
+          return true;
+        });
+        return newArray;
+      }
+      console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+    </script>
+  </body>
+</html>
